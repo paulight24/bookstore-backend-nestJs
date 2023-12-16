@@ -1,8 +1,8 @@
 {
-  "name": "nest-backend-tutorial",
+  "name": "bookstore-backend-nestjs",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Bookstore backend built with nestJs",
+  "author": "Paul",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
