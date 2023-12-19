@@ -40,11 +40,22 @@ export class BooksService {
   }
 
   async update(id: string, updateBookDto: UpdateBookDto) {
+    const userProfileDto = new UpdateBookDto();
+  
+    userProfileDto.name = updateBookDto.name;
+    userProfileDto.price = updateBookDto.price;
+    userProfileDto.description = updateBookDto.description;
+    userProfileDto.category = updateBookDto.category;
+
+    
     const bookToUpdate = await this.bookModel.findById(id);
-    const b = new this.bookModel(updateBookDto);
+    
     
     if(bookToUpdate) {
-      return await this.bookModel.findByIdAndUpdate(id, b)
+      return await this.bookModel.findByIdAndUpdate(id, userProfileDto, {
+        new: true,
+        runValidators: true
+      })
     } else throw new HttpException('Book not Found', HttpStatus.BAD_REQUEST)
 
   }

@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { DogService } from './dog.service';
-import { Dog } from 'src/interfaces/dog/dog.interface';
+import { Dog } from 'src/app.service';
+
 
 @Controller('dogs')
 export class DogsController {

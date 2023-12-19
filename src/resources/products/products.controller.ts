@@ -29,7 +29,7 @@ export class ProductsController {
     @Param('id') 
     id: string, 
     @Body() 
-    product: Product) {
+    product: UpdateProductDto) {
     return await this.productsService.updateById(id, product);
   }
 
